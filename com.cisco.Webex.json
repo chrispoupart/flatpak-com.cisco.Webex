@@ -1,0 +1,121 @@
+{
+  "id": "com.cisco.Webex",
+  "runtime": "org.freedesktop.Platform",
+  "runtime-version": "20.08",
+  "sdk": "org.freedesktop.Sdk",
+  "base": "org.electronjs.Electron2.BaseApp",
+  "base-version": "20.08",
+  "command": "webex",
+  "tags": ["proprietary"],
+  "separate-locales": false,
+  "finish-args": [
+    "--share=ipc",
+    "--share=network",
+    "--socket=x11",
+    "--socket=pulseaudio",
+    "--device=all",
+    "--filesystem=xdg-download",
+    "--talk-name=org.freedesktop.Notifications",
+    "--talk-name=org.freedesktop.secrets",
+    "--talk-name=org.gnome.SessionManager",
+    "--talk-name=org.kde.StatusNotifierWatcher",
+    "--env=TZ="
+  ],
+  "modules": [
+    {
+      "name": "ImageMagick",
+      "config-opts": [
+        "--enable-static=no",
+        "--with-modules",
+        "--disable-docs",
+        "--disable-deprecated",
+        "--without-autotrace",
+        "--without-bzlib",
+        "--without-djvu",
+        "--without-dps",
+        "--without-fftw",
+        "--without-fontconfig",
+        "--without-fpx",
+        "--without-freetype",
+        "--without-gvc",
+        "--without-jbig",
+        "--without-jpeg",
+        "--without-lcms",
+        "--without-lzma",
+        "--without-magick-plus-plus",
+        "--without-openexr",
+        "--without-openjp2",
+        "--without-pango",
+        "--without-raqm",
+        "--without-tiff",
+        "--without-webp",
+        "--without-wmf",
+        "--without-x",
+        "--without-xml",
+        "--without-zlib"
+      ],
+      "cleanup": ["*"],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://imagemagick.org/download/releases/ImageMagick-7.0.10-7.tar.xz",
+          "sha256": "7a0365e20eeef2129cb8ffee1acf1d21cdbc2ea8b57ce2941c6ca0e935d4f843"
+        }
+      ]
+    },
+    {
+      "name": "libsecret",
+      "buildsystem": "meson",
+      "config-opts": ["-Dmanpage=false", "-Dvapi=false", "-Dgtk_doc=false"],
+      "cleanup": [
+        "/bin",
+        "/include",
+        "/lib/pkgconfig",
+        "/share/gir-1.0",
+        "/share/man"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://download.gnome.org/sources/libsecret/0.19/libsecret-0.19.1.tar.xz",
+          "sha256": "8583e10179456ae2c83075d95455f156dc08db6278b32bf4bd61819335a30e3a"
+        }
+      ]
+    },
+    {
+      "name": "webex",
+      "buildsystem": "simple",
+      "build-commands": [". ${FLATPAK_BUILDER_BUILDDIR}/build"],
+      "sources": [
+        {
+          "type": "file",
+          "path": "webex-build.sh",
+          "dest-filename": "build"
+        },
+        {
+          "type": "file",
+          "path": "webex.sh"
+        },
+        {
+          "type": "file",
+          "path": "com.cisco.Webex.metainfo.xml"
+        },
+        {
+          "type": "file",
+          "dest-filename": "Webex.deb",
+          "only-arches": ["x86_64"],
+          "url": "https://binaries.webex.com/WebexDesktop-Ubuntu-Official-Package/Webex.deb ",
+          "sha256": "3edfbae04207e1187822a0e1aa50a217f70e96752c1d3e0eb79015ad45ac4e83"
+        },
+        {
+          "type": "extra-data",
+          "filename": "Webex.deb",
+          "only-arches": ["x86_64"],
+          "url": "https://binaries.webex.com/WebexDesktop-Ubuntu-Official-Package/Webex.deb",
+          "sha256": "3edfbae04207e1187822a0e1aa50a217f70e96752c1d3e0eb79015ad45ac4e83",
+          "size": 246995060
+        }
+      ]
+    }
+  ]
+}

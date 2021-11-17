@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+    <id>com.cisco.Webex</id>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>LicenseRef-proprietary</project_license>
+    <name>Cisco Webex Teams</name>
+    <summary>Webex by Cisco is a solution for video conferencing, online meetings and collaboration.</summary>
+    <description>
+        <p>
+            Webex by Cisco is the leading enterprise solution for video conferencing, online meetings, screen share, and webinars. Web conferencing, cloud calling, and equipment.
+        </p>
+
+        <p>
+            NOTE: This wrapper is not verified by, affiliated with, or supported by Cisco.
+        </p>
+    </description>
+    <launchable type="desktop-id">com.cisco.Webex.desktop</launchable>
+
+    <developer_name>Cisco</developer_name>
+    <url type="homepage">https://www.webex.com/downloads.html</url>
+
+    <releases>
+        <release version="41.10.0.20371" date="2021-10-07"/>
+    </releases>
+
+    <content_rating type="oars-1.1">
+        <content_attribute id="social-chat">intense</content_attribute>
+        <content_attribute id="social-info">intense</content_attribute>
+        <content_attribute id="social-audio">intense</content_attribute>
+        <content_attribute id="social-contacts">intense</content_attribute>
+    </content_rating>
+</component>
