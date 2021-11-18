@@ -25,5 +25,3 @@ timezone_workaround()
 timezone_workaround
 
 exec env TMPDIR="$XDG_CACHE_HOME" zypak-wrapper /app/bin/CiscoCollabHost "$@" --disable-namespace-sandbox --disable-setuid-sandbox
-
-# /app/bin/CiscoCollabHost %U --disable-namespace-sandbox --disable-setuid-sandbox
