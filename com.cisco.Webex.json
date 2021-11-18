@@ -3,8 +3,6 @@
   "runtime": "org.freedesktop.Platform",
   "runtime-version": "20.08",
   "sdk": "org.freedesktop.Sdk",
-  "base": "org.electronjs.Electron2.BaseApp",
-  "base-version": "20.08",
   "command": "webex",
   "tags": ["proprietary"],
   "separate-locales": false,
@@ -106,14 +104,6 @@
           "only-arches": ["x86_64"],
           "url": "https://binaries.webex.com/WebexDesktop-Ubuntu-Official-Package/Webex.deb ",
           "sha256": "3edfbae04207e1187822a0e1aa50a217f70e96752c1d3e0eb79015ad45ac4e83"
-        },
-        {
-          "type": "extra-data",
-          "filename": "Webex.deb",
-          "only-arches": ["x86_64"],
-          "url": "https://binaries.webex.com/WebexDesktop-Ubuntu-Official-Package/Webex.deb",
-          "sha256": "3edfbae04207e1187822a0e1aa50a217f70e96752c1d3e0eb79015ad45ac4e83",
-          "size": 246995060
         }
       ]
     }
