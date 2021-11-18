@@ -1,4 +1,4 @@
-# Cisco Webex Flatpakhttps://www.webex.com/
+# Cisco Webex Flatpak
 
 ## Description
 
